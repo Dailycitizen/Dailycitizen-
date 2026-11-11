@@ -1,0 +1,25 @@
+[
+  {
+    "id": "LAW001",
+    "name": "Stanley Omajuwa",
+    "firm": "Example Chambers",
+    "image": "",
+    "year_called": "2020",
+    "location": "Delta, Nigeria",
+    "practice_areas": [
+      "Constitutional Rights",
+      "Civil Litigation"
+    ],
+    "phone": "2349031939971",
+    "whatsapp": "2349031939971",
+    "subscription": {
+      "status": "active",
+      "start": "2026-10-09",
+      "end": "2099-10-09"
+    },
+    "verified": true,
+    "active": true,
+    "approval_status": "user_supplied_profile",
+    "note": "Profile details supplied by site owner. Confirm Bar status, identity, consent to publish, and compliance before public launch."
+  }
+]

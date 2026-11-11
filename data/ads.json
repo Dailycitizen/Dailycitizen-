@@ -1,0 +1,82 @@
+[
+  {
+    "id": "AD001",
+    "business": "Tec Faktory",
+    "title": "Build a stronger digital presence.",
+    "description": "Websites, digital solutions, digital marketing and technology support for Nigerian businesses.",
+    "image": "assets/images/ads/tecfaktory-flyer.svg",
+    "button_text": "Visit Tec Faktory",
+    "url": "https://tecfaktory.com/",
+    "categories": [
+      "all"
+    ],
+    "status": "active",
+    "start_date": "2026-10-09",
+    "end_date": "2026-10-16",
+    "position": "after-case",
+    "priority": 3,
+    "sample": true,
+    "approval_status": "house_ad",
+    "campaign_type": "house_ad"
+  },
+  {
+    "id": "AD002",
+    "business": "Chowdeck",
+    "title": "Food, groceries and more—delivered.",
+    "description": "Daily Citizen launch showcase: an example of how a consumer brand could appear in a sponsored placement. This is not an official Chowdeck campaign or endorsement.",
+    "image": "assets/images/ads/chowdeck-showcase.svg",
+    "button_text": "Visit Chowdeck",
+    "url": "https://www.chowdeck.com/",
+    "categories": [
+      "all"
+    ],
+    "status": "active",
+    "start_date": "2026-10-09",
+    "end_date": "2026-10-16",
+    "position": "after-tags",
+    "priority": 2,
+    "sample": true,
+    "approval_status": "launch_showcase",
+    "campaign_type": "free_launch_showcase"
+  },
+  {
+    "id": "AD003",
+    "business": "OPay",
+    "title": "Everyday payments, in one place.",
+    "description": "Daily Citizen launch showcase concept. This artwork is illustrative and does not imply an official OPay partnership or endorsement.",
+    "image": "assets/images/ads/opay-showcase.svg",
+    "button_text": "Visit OPay",
+    "url": "https://www.opayweb.com/",
+    "categories": [
+      "all"
+    ],
+    "status": "active",
+    "start_date": "2026-10-09",
+    "end_date": "2026-10-16",
+    "position": "after-tags",
+    "priority": 2,
+    "sample": true,
+    "approval_status": "launch_showcase",
+    "campaign_type": "free_launch_showcase"
+  },
+  {
+    "id": "AD004",
+    "business": "Lagos Life",
+    "title": "Discover the energy of Lagos.",
+    "description": "Daily Citizen launch showcase concept for a local lifestyle brand. Not an official partnership or endorsement.",
+    "image": "assets/images/ads/lagos-life-showcase.svg",
+    "button_text": "Explore Lagos Life",
+    "url": "https://www.instagram.com/",
+    "categories": [
+      "all"
+    ],
+    "status": "active",
+    "start_date": "2026-10-09",
+    "end_date": "2026-10-16",
+    "position": "after-tags",
+    "priority": 1,
+    "sample": true,
+    "approval_status": "launch_showcase",
+    "campaign_type": "free_launch_showcase"
+  }
+]

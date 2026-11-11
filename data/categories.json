@@ -1,0 +1,50 @@
+[
+  {
+    "id": "constitutional",
+    "name": "Constitutional Rights"
+  },
+  {
+    "id": "employment",
+    "name": "Employment Law"
+  },
+  {
+    "id": "business",
+    "name": "Business Law"
+  },
+  {
+    "id": "property",
+    "name": "Property & Land Law"
+  },
+  {
+    "id": "family",
+    "name": "Family Law"
+  },
+  {
+    "id": "criminal",
+    "name": "Criminal Law"
+  },
+  {
+    "id": "traffic",
+    "name": "Traffic & Transport Law"
+  },
+  {
+    "id": "consumer",
+    "name": "Consumer Rights"
+  },
+  {
+    "id": "cyber",
+    "name": "Cyber & Digital Law"
+  },
+  {
+    "id": "banking",
+    "name": "Banking & Finance"
+  },
+  {
+    "id": "human-rights",
+    "name": "Human Rights"
+  },
+  {
+    "id": "civic",
+    "name": "Civic & Government"
+  }
+]

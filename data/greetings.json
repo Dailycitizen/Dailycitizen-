@@ -1,0 +1,42 @@
+[
+  {
+    "language": "Yoruba",
+    "region": "South West",
+    "greeting": "Ẹ káàbọ̀",
+    "meaning": "Welcome",
+    "type": "welcome",
+    "formality": "polite",
+    "verified": true,
+    "source": "Nigerian language reference; verify with native-language reviewer before expanding."
+  },
+  {
+    "language": "Igbo",
+    "region": "South East",
+    "greeting": "Ndeewo",
+    "meaning": "Hello / Greetings",
+    "type": "general",
+    "formality": "general",
+    "verified": true,
+    "source": "Nigerian language reference; verify with native-language reviewer before expanding."
+  },
+  {
+    "language": "Hausa",
+    "region": "Northern Nigeria",
+    "greeting": "Sannu",
+    "meaning": "Hello / Greetings",
+    "type": "general",
+    "formality": "general",
+    "verified": true,
+    "source": "Nigerian language reference; verify with native-language reviewer before expanding."
+  },
+  {
+    "language": "Nigerian Pidgin",
+    "region": "Nigeria",
+    "greeting": "My padi",
+    "meaning": "My friend / buddy",
+    "type": "informal",
+    "formality": "informal",
+    "verified": true,
+    "source": "Common Nigerian Pidgin expression; usage varies by context."
+  }
+]

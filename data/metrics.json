@@ -1,0 +1,8 @@
+{
+  "mode": "anonymous-live",
+  "total_visits": 0,
+  "unique_visitors": 0,
+  "page_views": 0,
+  "online_now": 0,
+  "note": "Analytics counts begin when the Netlify analytics functions are deployed. No historical launch baseline is included."
+}

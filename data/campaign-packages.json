@@ -1,0 +1,43 @@
+{
+  "currency": "NGN",
+  "status": "proposed_standard_launch_pricing",
+  "note": "Illustrative prices must be approved by site owner and displayed transparently before checkout. No guaranteed impressions until actual traffic and delivery capacity are measured.",
+  "packages": [
+    {
+      "id": "starter-7",
+      "name": "Starter",
+      "price": 5000,
+      "duration_days": 7,
+      "placement": "standard_rotation",
+      "impressions_guaranteed": false,
+      "reporting": [
+        "eligible impressions",
+        "clicks"
+      ]
+    },
+    {
+      "id": "growth-30",
+      "name": "Growth",
+      "price": 15000,
+      "duration_days": 30,
+      "placement": "standard_rotation",
+      "impressions_guaranteed": false,
+      "reporting": [
+        "eligible impressions",
+        "clicks"
+      ]
+    },
+    {
+      "id": "featured-30",
+      "name": "Featured",
+      "price": 30000,
+      "duration_days": 30,
+      "placement": "higher_share_of_eligible_impressions",
+      "impressions_guaranteed": false,
+      "reporting": [
+        "eligible impressions",
+        "clicks"
+      ]
+    }
+  ]
+}
