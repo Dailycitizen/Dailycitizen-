@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#06100b" id="themeColorMeta">
+    <meta name="description" content="Daily Citizen 🇳🇬 makes Nigerian laws, rights, court cases and civic information simple, practical and easy to understand.">
+    <meta name="keywords" content="Nigeria law, Nigerian constitution, know your rights Nigeria, Nigerian legal information, civic education Nigeria, Nigerian court cases, citizen rights, Daily Citizen">
+    <meta name="author" content="TecFaktory">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <meta name="googlebot" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Daily Citizen 🇳🇬">
+    <meta property="og:title" content="Daily Citizen 🇳🇬 — Know Your Rights">
+    <meta property="og:description" content="Nigerian laws, rights, cases and civic information made simple.">
+    <meta property="og:image" content="assets/icons/icon-512.png">
+    <meta property="og:image:alt" content="Daily Citizen Nigeria app icon">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Daily Citizen 🇳🇬 — Know Your Rights">
+    <meta name="twitter:description" content="Nigerian laws, rights, cases and civic information made simple.">
+    <meta name="twitter:image" content="assets/icons/icon-512.png">
+    <link rel="canonical" href="./">
+    <link rel="manifest" href="manifest.webmanifest">
+    <link rel="icon" type="image/svg+xml" href="assets/icons/icon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/icons/apple-touch-icon.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Daily Citizen">
+    <title>Daily Citizen 🇳🇬 — Know Your Rights</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<div class="ambient ambient-one"></div><div class="ambient ambient-two"></div>
+<script type="application/ld+json">
+    {
+      "@context":"https://schema.org",
+      "@type":"WebSite",
+      "name":"Daily Citizen",
+      "alternateName":"Daily Citizen Nigeria",
+      "description":"Nigerian laws, rights, court cases and civic information made simple.",
+      "publisher":{"@type":"Organization","name":"TecFaktory"},
+      "inLanguage":"en-NG"
+    }
+    </script>
+<main class="app-shell">
+  <section class="citizen-card" id="citizenCard">
+    <header class="topbar">
+      <div class="brand">
+        <div class="brand-kicker"><span class="pulse-dot"></span> CITIZEN MODE</div>
+        <h1>DAILY CITIZEN <span aria-hidden="true">🇳🇬</span></h1>
+        <p id="greeting" class="greeting" aria-live="polite">Loading greeting...</p>
+      </div>
+      <div class="top-actions"><button type="button" id="installButton" class="icon-button install-button" aria-label="Install Daily Citizen" hidden>＋</button><button type="button" id="themeToggle" class="icon-button" aria-label="Toggle light and dark mode">☀</button></div>
+    </header>
+
+    <section class="live-strip" aria-label="Daily Citizen community activity">
+      <div><span class="live-icon">◉</span><strong id="visitsToday">—</strong><small>tracked visits</small></div>
+      <i></i>
+      <div><span class="live-icon active">●</span><strong id="activeNow">—</strong><small>online now</small></div>
+    </section>
+
+    <section class="citizen-dashboard" aria-label="Citizen progress">
+      <div><span>🔥</span><strong id="streakValue">0</strong><small>day streak</small></div>
+      <div><span>⚡</span><strong id="xpValue">0</strong><small>Citizen XP</small></div>
+      <div><span>🏆</span><strong id="levelValue">1</strong><small>level</small></div>
+    </section>
+    <div class="xp-track" aria-label="XP progress"><span id="xpProgress"></span></div>
+
+    <div class="controls">
+      <label for="category">What do you want to learn?</label>
+      <div class="select-wrap"><select id="category"><option value="all">All Categories</option></select><span>⌄</span></div>
+    </div>
+    <p id="date" class="date" aria-live="polite">Loading date...</p>
+    <div id="status" class="status" role="status" aria-live="polite"></div>
+
+    <article id="dailyContent" class="content" hidden>
+      <section class="hero-right">
+        <div class="hero-grid"></div><div class="hero-orbit orbit-one"></div><div class="hero-orbit orbit-two"></div>
+        <div class="hero-top"><span>🔥 TODAY'S RIGHT</span><span id="heroDate"></span></div>
+        <div class="hero-main"><p id="heroCategory" class="hero-category"></p><h2 id="heroTitle"></h2></div>
+        <div class="hero-bottom"><span>Know the law. Know what to do.</span><span id="xpToday">+10 XP</span></div>
+      </section>
+
+      <div class="quick-actions">
+        <button type="button" id="bookmark" class="quick-button">♡ Save</button>
+        <span id="bookmarkHint">Save this right for later</span>
+        <button type="button" id="share" class="quick-button">↗ Share</button>
+      </div>
+
+      <section class="law-section glass-panel">
+        <p id="categoryName" class="eyebrow"></p><h2 id="title"></h2>
+        <div class="law-box"><span class="law-mark">§</span><p id="lawText"></p></div>
+        <div class="reference"><strong>Legal reference</strong><p id="lawReference"></p><a id="lawSource" href="#" target="_blank" rel="noopener noreferrer">View legal source ↗</a></div>
+      </section>
+
+      <hr>
+      <section class="info-section" id="verificationSection"><p class="section-label">✓ VERIFICATION</p><p id="verification"></p></section>
+      <section class="info-section" id="focusSection"><p class="section-label">◎ DAILY FOCUS</p><p id="dailyFocus"></p></section>
+      <hr>
+
+      <section class="case-card">
+        <div class="card-heading"><p class="section-label">📚 CASE OF THE DAY</p><span>LEGAL HISTORY</span></div>
+        <h3 id="caseName"></h3><p id="caseStory"></p><p class="citation"><strong>Citation:</strong> <span id="caseCitation"></span></p>
+        <a id="caseSource" class="case-source" href="#" target="_blank" rel="noopener noreferrer" hidden>Read case source →</a>
+      </section>
+
+      <div id="adSlot1" class="ad-slot" hidden></div>
+
+      <hr><section class="example-box"><p class="section-label" id="exampleLabel">👤 REAL-LIFE EXAMPLE</p><p id="realLifeExample"></p></section>
+      <hr><section><p class="section-label">🇳🇬 WHAT THIS MEANS FOR YOU</p><p id="meaning"></p></section>
+      <hr><section class="action-box"><p class="section-label">🛡️ WHAT YOU CAN DO</p><div id="whatYouCanDo"></div></section>
+
+      <section class="quiz-card">
+        <div class="quiz-heading"><span>🧠 QUICK CHECK</span><strong>+10 XP</strong></div><h3 id="quizQuestion">Test your knowledge.</h3><div id="quizOptions" class="quiz-options"></div><p id="quizFeedback" class="quiz-feedback"></p>
+      </section>
+
+      <section class="tags-section" id="tagsSection"><p class="section-label">🏷️ TOPICS</p><div id="tags" class="tags"></div></section>
+
+      <div id="adSlot2" class="ad-slot" hidden></div>
+      <section id="lawyerSection" class="lawyer-section" hidden></section>
+      <section id="musicSection" class="music-card" hidden></section>
+      <section class="bandwidth-card" id="bandwidthSupport"><div class="bandwidth-icon">↗</div><div class="bandwidth-copy"><p class="section-label">SUPPORT DAILY CITIZEN</p><h3>Optional bandwidth sharing</h3><p id="bandwidthStatus">This feature is not active yet. We will only enable it after an approved provider integration and clear opt-in consent are available.</p><a href="readme.html#bandwidth">How it works &amp; privacy rules →</a></div><button type="button" id="bandwidthLearn" class="bandwidth-learn">Details</button></section>
+      <p class="metrics-note">Live estimates use anonymous first-party visitor IDs and short-lived sessions. No raw IP addresses are stored. Counts begin when analytics is enabled.</p>
+      <p class="disclaimer">General information only. This is not legal advice. Professional legal assistance should be obtained from a qualified practitioner.</p>
+    </article>
+
+    <section class="actions"><button type="button" id="saveImage">🖼 Save Card</button><button type="button" id="download">⬇ Download</button><button type="button" id="copy">📋 Copy</button></section>
+    <div id="shareCard" class="share-card" aria-hidden="true"><div class="share-brand">DAILY CITIZEN 🇳🇬</div><div class="share-pill">KNOW YOUR RIGHTS</div><div id="shareCategory">TODAY'S RIGHT</div><h2 id="shareTitle">Know your rights.</h2><p id="shareReference"></p><div class="share-footer">Learn your rights. Know what to do. · TecFaktory</div></div>
+    <footer>© TecFaktory <span id="year"></span> · <span>Daily Citizen V1 · Netlify Edition</span> · <a href="readme.html">Project Info</a> · <a href="/laws/">Legal Library</a> · <a href="/laws/">Legal Library</a> · <a href="/laws/">Legal Library</a> · <a href="/laws/">Legal Library</a> · <a href="/laws/">Legal Library</a> · <a href="/laws/">Legal Library</a> · <a href="admin/">Admin</a></footer>
+  </section>
+</main>
+<button id="musicFloat" class="music-float" type="button" aria-label="Open Citizen Sound" hidden>▶</button>
+<div id="musicToast" class="music-toast" hidden></div>
+<div id="musicPlayerOverlay" class="music-overlay" hidden role="dialog" aria-modal="true" aria-label="Citizen Sound music player"><div class="music-player-panel" id="musicPlayerPanel"><button type="button" id="musicClose" class="music-close" aria-label="Close music player">×</button><img id="playerArtwork" class="player-artwork" alt="Music artwork"><p class="section-label">CITIZEN SOUND</p><h2 id="playerSong">Select a song</h2><p id="playerArtist" class="player-artist"></p><audio id="playerAudio" controls preload="none" hidden></audio><a id="playerExternal" class="player-external" href="#" target="_blank" rel="noopener noreferrer" hidden>Open music profile ↗</a><div class="player-controls"><button type="button" id="playerPrevious" aria-label="Previous song">‹</button><span id="playerPosition">1 / 1</span><button type="button" id="playerNext" aria-label="Next song">›</button></div><p class="player-note">Only music authorized for playback should be uploaded or linked.</p></div></div>
+<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+<script src="assets/js/app.js"></script>
+<script>if("serviceWorker" in navigator){window.addEventListener("load",()=>navigator.serviceWorker.register("sw.js").catch(()=>{}));}</script>
+</body>
+</html>

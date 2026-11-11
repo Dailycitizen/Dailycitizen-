@@ -1,0 +1,13 @@
+{
+  "name": "daily-citizen-netlify",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Daily Citizen by TecFaktory — Netlify deployable legal education PWA",
+  "dependencies": {
+    "@netlify/blobs": "^8.2.0"
+  },
+  "scripts": {
+    "build": "node scripts/generate-seo.mjs"
+  }
+}
