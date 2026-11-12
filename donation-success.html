@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="theme-color" content="#0d6841">
+
+  <title>Donation status | Daily Citizen</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      padding: 22px;
+      background: #f2f7f3;
+      color: #17251f;
+      font-family: Arial, sans-serif;
+    }
+
+    .panel {
+      width: min(100%, 520px);
+      padding: 34px 26px;
+      border-radius: 20px;
+      background: #fff;
+      box-shadow: 0 14px 45px #102b1b16;
+      text-align: center;
+    }
+
+    .mark {
+      font-size: 42px;
+      color: #12834c;
+    }
+
+    h1 {
+      margin: 12px 0;
+      font-size: 27px;
+    }
+
+    p {
+      line-height: 1.65;
+      color: #53645a;
+    }
+
+    a {
+      display: inline-block;
+      margin-top: 16px;
+      padding: 13px 20px;
+      border-radius: 10px;
+      background: #12834c;
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .small {
+      font-size: 13px;
+      overflow-wrap: anywhere;
+    }
+  </style>
+</head>
+
+<body>
+
+  <main class="panel">
+
+    <div class="mark" id="mark" aria-hidden="true">●</div>
+
+    <h1 id="heading">Checking your donation…</h1>
+
+    <p id="message">
+      Please wait while Daily Citizen securely verifies your payment with Flutterwave.
+    </p>
+
+    <p class="small" id="reference"></p>
+
+    <a href="/" id="home" hidden>
+      Return to Daily Citizen
+    </a>
+
+  </main>
+
+  <script>
+    (async () => {
+
+      const params = new URLSearchParams(location.search);
+
+      const status = params.get("status");
+      const txRef = params.get("tx_ref");
+      const transactionId = params.get("transaction_id");
+
+      const heading = document.getElementById("heading");
+      const message = document.getElementById("message");
+      const reference = document.getElementById("reference");
+      const home = document.getElementById("home");
+      const mark = document.getElementById("mark");
+
+      home.hidden = false;
+
+      if (
+        status !== "successful" ||
+        !txRef ||
+        !transactionId
+      ) {
+
+        heading.textContent = "Payment not confirmed";
+
+        message.textContent =
+          "Your checkout was cancelled or Flutterwave did not return a successful payment. If you were debited, please contact us with your payment reference.";
+
+        mark.textContent = "!";
+
+        if (txRef) {
+          reference.textContent = "Reference: " + txRef;
+        }
+
+        return;
+      }
+
+      try {
+
+        const response = await fetch(
+          `/.netlify/functions/verify-donation?transaction_id=${encodeURIComponent(transactionId)}&tx_ref=${encodeURIComponent(txRef)}`,
+          {
+            cache: "no-store"
+          }
+        );
+
+        const result = await response.json();
+
+        if (!response.ok || !result.success) {
+          throw new Error(
+            result.message || "Payment could not be verified."
+          );
+        }
+
+        heading.textContent =
+          "Thank you for supporting Daily Citizen!";
+
+        message.textContent =
+          `Your donation of ₦${Number(result.amount).toLocaleString("en-NG")} has been successfully verified. Your support helps us advance legal awareness and civic education.`;
+
+        mark.textContent = "✓";
+
+        reference.textContent =
+          "Donation reference: " + txRef;
+
+      } catch (error) {
+
+        heading.textContent = "Verification is pending";
+
+        message.textContent =
+          error.message +
+          " Please keep your transaction reference and refresh this page shortly.";
+
+        mark.textContent = "…";
+
+        reference.textContent =
+          "Donation reference: " + txRef;
+      }
+
+    })();
+  </script>
+
+</body>
+</html>
