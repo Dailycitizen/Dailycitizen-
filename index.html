@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#06100b" id="themeColorMeta">
     <meta name="description" content="Daily Citizen 🇳🇬 makes Nigerian laws, rights, court cases and civic information simple, practical and easy to understand.">
-    <meta name="keywords" content="Nigeria law, Nigerian constitution, know your rights Nigeria, Nigerian legal information, civic education Nigeria, Nigerian court cases, citizen rights, Daily Citizen">
+    <meta name="keywords" content="Nigeria law, Nigerian constitution, know your rights Nigeria, Nigerian legal information, civic education Nigeria, Nigerian court cases, citizen rights, Daily Citizen, cyber law, business law, entertainment law">
     <meta name="author" content="TecFaktory">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
     <meta name="googlebot" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
@@ -124,7 +124,90 @@
       <div id="adSlot2" class="ad-slot" hidden></div>
       <section id="lawyerSection" class="lawyer-section" hidden></section>
       <section id="musicSection" class="music-card" hidden></section>
-      <section class="bandwidth-card" id="bandwidthSupport"><div class="bandwidth-icon">↗</div><div class="bandwidth-copy"><p class="section-label">SUPPORT DAILY CITIZEN</p><h3>Optional bandwidth sharing</h3><p id="bandwidthStatus">This feature is not active yet. We will only enable it after an approved provider integration and clear opt-in consent are available.</p><a href="readme.html#bandwidth">How it works &amp; privacy rules →</a></div><button type="button" id="bandwidthLearn" class="bandwidth-learn">Details</button></section>
+      <!--<section class="bandwidth-card" id="bandwidthSupport"><div class="bandwidth-icon">↗</div><div class="bandwidth-copy"><p class="section-label">SUPPORT DAILY CITIZEN</p><h3>Optional bandwidth sharing</h3><p id="bandwidthStatus">This feature is not active yet. We will only enable it after an approved provider integration and clear opt-in consent are available.</p><a href="readme.html#bandwidth">How it works &amp; privacy rules →</a></div><button type="button" id="bandwidthLearn" class="bandwidth-learn">Details</button></section>-->
+        <section class="dc-donation" id="support-daily-citizen" aria-labelledby="dc-donation-title">
+  <div class="dc-donation__inner">
+
+    <div class="dc-donation__copy">
+      <span class="dc-donation__eyebrow">SUPPORT THE MISSION</span>
+
+      <h2 id="dc-donation-title">
+        Help make legal knowledge accessible to everyone.
+      </h2>
+
+      <p>
+        Your contribution supports accessible legal education, civic awareness,
+        research and the continued development of Daily Citizen.
+      </p>
+
+      <div class="dc-donation__trust">
+        Secure payment powered by Flutterwave
+      </div>
+    </div>
+
+    <form class="dc-donation__form" id="dcDonationForm">
+
+      <label class="dc-donation__label" for="dcDonorName">
+        Your name
+      </label>
+      <input
+        id="dcDonorName"
+        name="name"
+        type="text"
+        maxlength="100"
+        autocomplete="name"
+        placeholder="Full name"
+        required
+      >
+
+      <label class="dc-donation__label" for="dcDonorEmail">
+        Email address
+      </label>
+      <input
+        id="dcDonorEmail"
+        name="email"
+        type="email"
+        maxlength="160"
+        autocomplete="email"
+        placeholder="you@example.com"
+        required
+      >
+
+      <span class="dc-donation__label">Choose an amount (NGN)</span>
+
+      <div class="dc-donation__amounts" role="group" aria-label="Suggested donation amounts">
+        <button type="button" class="dc-amount is-selected" data-amount="1000">₦1,000</button>
+        <button type="button" class="dc-amount" data-amount="2500">₦2,500</button>
+        <button type="button" class="dc-amount" data-amount="5000">₦5,000</button>
+        <button type="button" class="dc-amount" data-amount="10000">₦10,000</button>
+      </div>
+
+      <label class="dc-donation__label" for="dcCustomAmount">
+        Or enter another amount (₦)
+      </label>
+
+      <input
+        id="dcCustomAmount"
+        name="amount"
+        type="number"
+        min="100"
+        max="10000000"
+        step="1"
+        inputmode="numeric"
+        placeholder="Enter amount"
+      >
+
+      <button class="dc-donation__submit" id="dcDonateButton" type="submit">
+        Donate now <span aria-hidden="true">→</span>
+      </button>
+
+      <p class="dc-donation__note" id="dcDonationMessage" role="status" aria-live="polite">
+        You will be redirected to Flutterwave to complete your donation.
+      </p>
+
+    </form>
+  </div>
+</section>
       <p class="metrics-note">Live estimates use anonymous first-party visitor IDs and short-lived sessions. No raw IP addresses are stored. Counts begin when analytics is enabled.</p>
       <p class="disclaimer">General information only. This is not legal advice. Professional legal assistance should be obtained from a qualified practitioner.</p>
     </article>
@@ -140,5 +223,88 @@
 <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
 <script src="assets/js/app.js"></script>
 <script>if("serviceWorker" in navigator){window.addEventListener("load",()=>navigator.serviceWorker.register("sw.js").catch(()=>{}));}</script>
+    <script>
+(() => {
+  const form = document.getElementById("dcDonationForm");
+
+  if (!form || form.dataset.ready === "1") return;
+
+  form.dataset.ready = "1";
+
+  const custom = document.getElementById("dcCustomAmount");
+  const message = document.getElementById("dcDonationMessage");
+  const submit = document.getElementById("dcDonateButton");
+
+  let selectedAmount = 1000;
+
+  form.querySelectorAll(".dc-amount").forEach(button => {
+    button.addEventListener("click", () => {
+      selectedAmount = Number(button.dataset.amount);
+      custom.value = "";
+
+      form.querySelectorAll(".dc-amount").forEach(item => {
+        item.classList.toggle("is-selected", item === button);
+      });
+    });
+  });
+
+  custom.addEventListener("input", () => {
+    if (custom.value !== "") {
+      selectedAmount = Number(custom.value);
+
+      form.querySelectorAll(".dc-amount").forEach(item => {
+        item.classList.remove("is-selected");
+      });
+    }
+  });
+
+  form.addEventListener("submit", async event => {
+    event.preventDefault();
+
+    const name = document.getElementById("dcDonorName").value.trim();
+    const email = document.getElementById("dcDonorEmail").value.trim();
+
+    const amount = custom.value !== ""
+      ? Number(custom.value)
+      : selectedAmount;
+
+    if (!Number.isFinite(amount) || amount < 100 || amount > 10000000) {
+      message.textContent = "Enter a donation amount between ₦100 and ₦10,000,000.";
+      return;
+    }
+
+    submit.disabled = true;
+    submit.textContent = "Preparing secure checkout…";
+    message.textContent = "Connecting securely to Flutterwave. Please wait.";
+
+    try {
+      const response = await fetch("/.netlify/functions/create-donation", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ name, email, amount })
+      });
+
+      const result = await response.json();
+
+      if (!response.ok || !result.success || !result.link) {
+        throw new Error(
+          result.message || "Unable to start checkout. Please try again."
+        );
+      }
+
+      window.location.assign(result.link);
+
+    } catch (error) {
+      message.textContent =
+        error.message || "Something went wrong. Please try again.";
+
+      submit.disabled = false;
+      submit.innerHTML = 'Donate now <span aria-hidden="true">→</span>';
+    }
+  });
+})();
+</script>
 </body>
 </html>
