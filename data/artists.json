@@ -24,7 +24,7 @@
     "status": "active",
     "sponsored": true,
     "start_date": "2026-10-09",
-    "end_date": "2026-10-16",
+    "end_date": "2027-10-16",
     "approval_status": "launch_showcase",
     "campaign_type": "free_launch_showcase",
     "note": "Independent launch showcase artwork, not an official endorsement or paid partnership. Artist/management approval is required before representing this as an authorized campaign."
@@ -61,15 +61,15 @@
   },
   {
     "id": "ART005",
-    "artist": "Burna Boy",
+    "artist": "D Smart",
     "song": "Artist spotlight · official music profile",
-    "spotify_url": "https://music.apple.com/us/search?term=Burna+Boy",
+    "spotify_url": "https://audiomack.com/grinclassic/song/pikin-mummy-i-want-to-drink-small-stout",
     "image": "assets/images/artists/burna-boy-showcase.svg",
     "genre": "Afrofusion",
     "status": "active",
     "sponsored": true,
     "start_date": "2026-10-09",
-    "end_date": "2026-10-16",
+    "end_date": "2027-10-16",
     "approval_status": "launch_showcase",
     "campaign_type": "free_launch_showcase",
     "note": "Independent launch showcase artwork, not an official endorsement or paid partnership."
